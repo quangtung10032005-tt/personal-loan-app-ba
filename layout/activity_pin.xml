@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="NHẬP MÃ PIN"
+        android:textColor="#333333"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Vui lòng nhập mã PIN để tiếp tục"
+        android:textColor="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <LinearLayout
+        android:id="@+id/layoutDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage">
+
+        <View android:id="@+id/dot1" android:layout_width="20dp" android:layout_height="20dp" android:layout_margin="10dp" android:background="@drawable/bg_pin_empty" />
+        <View android:id="@+id/dot2" android:layout_width="20dp" android:layout_height="20dp" android:layout_margin="10dp" android:background="@drawable/bg_pin_empty" />
+        <View android:id="@+id/dot3" android:layout_width="20dp" android:layout_height="20dp" android:layout_margin="10dp" android:background="@drawable/bg_pin_empty" />
+        <View android:id="@+id/dot4" android:layout_width="20dp" android:layout_height="20dp" android:layout_margin="10dp" android:background="@drawable/bg_pin_empty" />
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/gridLayoutNumbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:columnCount="3"
+        app:layout_constraintBottom_toTopOf="@+id/tvForgotPin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutDots"
+        app:layout_constraintVertical_bias="0.3">
+
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="80dp" android:layout_height="80dp" android:text="1" android:textSize="24sp" android:onClick="onNumberClick"/>
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="80dp" android:layout_height="80dp" android:text="2" android:textSize="24sp" android:onClick="onNumberClick"/>
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="80dp" android:layout_height="80dp" android:text="3" android:textSize="24sp" android:onClick="onNumberClick"/>
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="80dp" android:layout_height="80dp" android:text="4" android:textSize="24sp" android:onClick="onNumberClick"/>
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="80dp" android:layout_height="80dp" android:text="5" android:textSize="24sp" android:onClick="onNumberClick"/>
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="80dp" android:layout_height="80dp" android:text="6" android:textSize="24sp" android:onClick="onNumberClick"/>
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="80dp" android:layout_height="80dp" android:text="7" android:textSize="24sp" android:onClick="onNumberClick"/>
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="80dp" android:layout_height="80dp" android:text="8" android:textSize="24sp" android:onClick="onNumberClick"/>
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="80dp" android:layout_height="80dp" android:text="9" android:textSize="24sp" android:onClick="onNumberClick"/>
+
+        <View android:layout_width="80dp" android:layout_height="80dp" />
+        <Button style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="80dp" android:layout_height="80dp" android:text="0" android:textSize="24sp" android:onClick="onNumberClick"/>
+
+        <ImageButton
+            android:id="@+id/btnDelete"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@android:drawable/ic_input_delete"
+            android:contentDescription="Delete"
+            app:tint="#D32F2F"
+            android:onClick="onDeleteClick"/>
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/tvForgotPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Quên mã PIN?"
+        android:textColor="#2196F3"
+        android:textStyle="bold"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

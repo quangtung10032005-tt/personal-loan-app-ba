@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_card_white"
+    android:padding="16dp"
+    android:layout_marginBottom="10dp"
+    android:gravity="center_vertical"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Category Icon -->
+    <TextView
+        android:id="@+id/tvCategoryIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="🍔"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:background="@drawable/bg_icon_blue"
+        android:layout_marginRight="14dp"/>
+
+    <!-- Info -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCategoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ăn uống"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/gray_800"/>
+
+        <TextView
+            android:id="@+id/tvNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mô tả chi tiêu"
+            android:textSize="12sp"
+            android:textColor="@color/gray_500"
+            android:layout_marginTop="2dp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01/01/2026"
+            android:textSize="11sp"
+            android:textColor="@color/gray_400"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+    <!-- Amount -->
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-50.000đ"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/red_icon"/>
+</LinearLayout>

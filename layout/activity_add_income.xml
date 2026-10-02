@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingHorizontal="16dp"
+        android:background="@android:color/white"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Thêm thu nhập"
+            android:textColor="#1A237E"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="Lưu"
+            android:textColor="#2D60C4"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEEEEE" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số tiền thu vào"
+                android:textColor="#757575"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Nhập số tiền thu"
+                android:inputType="numberDecimal"
+                android:background="@drawable/bg_edittext"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Danh mục (bắt buộc chọn hoặc tạo mới)"
+                android:textColor="#757575"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <Spinner
+                android:id="@+id/spCategory"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_edittext"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/etNewCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:hint="Thêm danh mục mới"
+                    android:background="@drawable/bg_edittext"
+                    android:paddingHorizontal="16dp" />
+
+                <Button
+                    android:id="@+id/btnAddCat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="8dp"
+                    android:text="Thêm"
+                    android:backgroundTint="#2D60C4"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày thu"
+                android:textColor="#757575"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etDate"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:focusable="false"
+                android:hint="10/06/2026"
+                android:background="@drawable/bg_edittext"
+                android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mô tả (tùy chọn)"
+                android:textColor="#757575"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etDesc"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:hint="Nhập mô tả thu nhập..."
+                android:gravity="top"
+                android:padding="16dp"
+                android:background="@drawable/bg_edittext"
+                android:layout_marginBottom="30dp"/>
+
+            <Button
+                android:id="@+id/btnSaveIncome"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Thêm thu nhập"
+                android:backgroundTint="#2D60C4"
+                android:textSize="16sp"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

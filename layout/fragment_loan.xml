@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F9FA">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="30dp"
+        android:elevation="4dp">
+
+        <ImageButton
+            android:id="@+id/btnBackLoan"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvLoanTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tính khoản vay"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/gray_800"
+            android:layout_centerInParent="true"/>
+
+        <ImageButton
+            android:id="@+id/btnLoanHistory"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_recent_history"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="Lịch sử"
+            android:clickable="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Input Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_white"
+                android:padding="24dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Mục đích vay -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mục đích vay vốn"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_500"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/etLoanPurpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input"
+                    android:hint="Nhập mục đích vay"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray_800"
+                    android:layout_marginBottom="20dp"
+                    android:inputType="text"/>
+
+                <!-- Đối tượng vay -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đối tượng vay"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_500"
+                    android:layout_marginBottom="12dp"/>
+
+                <RadioGroup
+                    android:id="@+id/rgLoanSubject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+                    <RadioButton
+                        android:id="@+id/rbIndividual"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Cá nhân"
+                        android:checked="true"/>
+                    <RadioButton
+                        android:id="@+id/rbHousehold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hộ KD"/>
+                    <RadioButton
+                        android:id="@+id/rbEnterprise"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Doanh nghiệp"/>
+                </RadioGroup>
+
+                <!-- Sub-subject for Cá nhân -->
+                <LinearLayout
+                    android:id="@+id/layoutIndividualType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bạn là:"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray_500"
+                        android:layout_marginBottom="8dp"/>
+                    <Spinner
+                        android:id="@+id/spinnerIndividualType"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_input"
+                        android:padding="8dp"/>
+                </LinearLayout>
+
+                <!-- Thu nhập hàng tháng -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thu nhập hàng tháng"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_500"
+                    android:layout_marginBottom="12dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_input"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="20dp">
+                    <EditText
+                        android:id="@+id/etMonthlyIncome"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Nhập thu nhập"
+                        android:inputType="numberDecimal"
+                        android:background="@null"
+                        android:textSize="16sp"
+                        android:textColor="@color/gray_800"
+                        android:layout_toStartOf="@+id/tvIncomeSuffix"/>
+                    <TextView
+                        android:id="@+id/tvIncomeSuffix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="VND"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray_400"
+                        android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+
+                <!-- Số tiền vay -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Số tiền muốn vay"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_500"
+                    android:layout_marginBottom="12dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_input"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="20dp">
+                    <EditText
+                        android:id="@+id/etLoanAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Nhập số tiền"
+                        android:inputType="numberDecimal"
+                        android:background="@null"
+                        android:textSize="16sp"
+                        android:textColor="@color/gray_800"
+                        android:layout_toStartOf="@+id/tvVndSuffix"/>
+                    <TextView
+                        android:id="@+id/tvVndSuffix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="VND"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray_400"
+                        android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+
+                <!-- Thời gian & Số năm Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thời gian bắt đầu"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray_500"
+                            android:layout_marginBottom="8dp"/>
+
+                        <RelativeLayout
+                            android:id="@+id/layoutStartDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:background="@drawable/bg_input"
+                            android:paddingHorizontal="16dp">
+                            <TextView
+                                android:id="@+id/tvStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="08/06/2026"
+                                android:gravity="center_vertical"
+                                android:textSize="15sp"
+                                android:textColor="@color/gray_800"/>
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@android:drawable/ic_menu_my_calendar"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:alpha="0.6"
+                                android:contentDescription="Calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Số tháng vay"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray_500"
+                            android:layout_marginBottom="8dp"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:background="@drawable/bg_input"
+                            android:paddingHorizontal="16dp">
+                            <EditText
+                                android:id="@+id/etLoanTenure"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="0"
+                                android:inputType="number"
+                                android:background="@null"
+                                android:gravity="center"
+                                android:textSize="16sp"
+                                android:textColor="@color/gray_800"
+                                android:layout_toStartOf="@+id/tvMonthSuffix"/>
+                            <TextView
+                                android:id="@+id/tvMonthSuffix"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Tháng"
+                                android:gravity="center"
+                                android:textSize="14sp"
+                                android:textColor="@color/gray_400"
+                                android:layout_alignParentEnd="true"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Ngày trả -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ngày kết thúc"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_500"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvEndDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="--"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray_800"
+                    android:background="@drawable/bg_input"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="24dp"/>
+
+                <!-- Lãi suất -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lãi suất %/năm"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_500"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <Spinner
+                        android:id="@+id/spinnerBankRate"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1.3"
+                        android:background="@drawable/bg_input"
+                        android:padding="8dp"
+                        android:layout_marginEnd="10dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_input"
+                        android:paddingHorizontal="16dp">
+                        <EditText
+                            android:id="@+id/etLoanRate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="0.0"
+                            android:inputType="numberDecimal"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/gray_800"
+                            android:layout_toStartOf="@+id/tvPercentSuffix"/>
+                        <TextView
+                            android:id="@+id/tvPercentSuffix"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="%"
+                            android:gravity="center"
+                            android:textSize="14sp"
+                            android:textColor="@color/gray_400"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <!-- Loại hình -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loại hình"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray_800"
+                    android:layout_marginBottom="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <LinearLayout
+                        android:id="@+id/btnLoanTypeEqual"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_loan_type_selected"
+                        android:padding="16dp"
+                        android:layout_marginEnd="8dp">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/ic_expense"
+                            android:padding="10dp"
+                            android:background="@drawable/bg_card_white"
+                            android:backgroundTint="@color/white"
+                            android:layout_marginBottom="12dp"
+                            android:contentDescription="Equal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Trả lãi chia đều"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/gray_800"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tiền gốc và lãi trả đều hàng tháng"
+                            android:textSize="12sp"
+                            android:textColor="@color/gray_500"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnLoanTypeDecreasing"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_loan_type_normal"
+                        android:padding="16dp"
+                        android:layout_marginStart="8dp">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/ic_report"
+                            android:padding="10dp"
+                            android:background="@drawable/bg_card_white"
+                            android:layout_marginBottom="12dp"
+                            android:contentDescription="Decreasing" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dư nợ giảm dần"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/gray_800"
+                            android:layout_marginBottom="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tiền gốc trả đều, lãi giảm dần theo dư nợ"
+                            android:textSize="12sp"
+                            android:textColor="@color/gray_500"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnCalculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Tính khoản vay"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_button_primary"
+                    android:stateListAnimator="@null"/>
+            </LinearLayout>
+
+            <!-- Result Card -->
+            <LinearLayout
+                android:id="@+id/layoutResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_white"
+                android:padding="24dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone">
+
+                <!-- Tabs -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="24dp">
+                        <TextView
+                            android:id="@+id/tabOverview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tổng quan"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/loan_green"
+                            android:paddingBottom="8dp"/>
+                        <View
+                            android:id="@+id/tabOverviewUnderline"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:background="@color/loan_green"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tabSchedule"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lịch trả nợ"
+                            android:textSize="16sp"
+                            android:textColor="@color/gray_400"
+                            android:paddingBottom="8dp"/>
+                        <View
+                            android:id="@+id/tabScheduleUnderline"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:background="@color/transparent"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Overview -->
+                <LinearLayout
+                    android:id="@+id/layoutOverview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gốc cần trả" android:textSize="15sp" android:textColor="@color/gray_700"/>
+                        <TextView android:id="@+id/tvPrincipal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10.000đ" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/gray_800" android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lãi cần trả" android:textSize="15sp" android:textColor="@color/gray_700"/>
+                        <TextView android:id="@+id/tvInterestTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="790đ" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/gray_800" android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/gray_100" android:layout_marginBottom="20dp"/>
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tổng phải trả" android:textSize="14sp" android:textColor="@color/gray_500"/>
+                        <TextView android:id="@+id/tvTotalDisplay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10.790đ" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/gray_800" android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hàng tháng" android:textSize="15sp" android:textColor="@color/gray_500"/>
+                        <TextView android:id="@+id/tvMonthlyDisplay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="300đ" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/gray_800" android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutAdequacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_card_white"
+                        android:padding="12dp"
+                        android:layout_marginTop="12dp">
+                        <TextView
+                            android:id="@+id/tvIncomeAdequacy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray_800"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:id="@+id/tvAdequacyMessage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray_500"
+                            android:textSize="13sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutSchedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSchedule"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSaveLoan"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="LƯU KHOẢN VAY"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_button_primary"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+                    android:stateListAnimator="@null"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

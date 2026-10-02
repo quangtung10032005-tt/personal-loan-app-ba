@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/bg_card_white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TẠO KẾ HOẠCH"
+                android:textSize="12sp"
+                android:textColor="@color/gray_400"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kế hoạch ngân sách mới"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/gray_800"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="@color/gray_400"
+            android:contentDescription="Close"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical">
+
+        <Spinner
+            android:id="@+id/spinnerQuickCategory"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="2"
+            android:background="@drawable/bg_input"
+            android:layout_marginRight="8dp"/>
+
+        <EditText
+            android:id="@+id/etQuickAmount"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:hint="Số tiền"
+            android:inputType="number"
+            android:background="@drawable/bg_input"
+            android:paddingHorizontal="12dp"
+            android:textSize="14sp"
+            android:layout_marginRight="8dp"
+            android:importantForAutofill="no"/>
+
+        <Button
+            android:id="@+id/btnAddCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="Thêm"
+            android:textAllCaps="false"
+            android:backgroundTint="#D1D5DB"
+            android:textColor="@color/gray_800"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tháng"
+        android:textSize="13sp"
+        android:textColor="@color/gray_500"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/btnSelectMonth"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/bg_input"
+        android:paddingHorizontal="12dp"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true">
+        <TextView
+            android:id="@+id/tvMonthLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tháng Sáu 2026"
+            android:textColor="@color/gray_800"/>
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_calendar"
+            android:tint="@color/gray_800"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tổng ngân sách"
+        android:textSize="13sp"
+        android:textColor="@color/gray_500"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/etTotalBudget"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/bg_input"
+        android:paddingHorizontal="12dp"
+        android:inputType="number"
+        android:text="0"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"
+        android:importantForAutofill="no"/>
+
+    <TextView
+        android:id="@+id/tvBudgetError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lỗi: Tổng các mục vượt quá ngân sách!"
+        android:textColor="#EF4444"
+        android:textSize="12sp"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Danh sách danh mục"
+        android:textSize="13sp"
+        android:textColor="@color/gray_500"
+        android:layout_marginBottom="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCategories"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/bg_category_list"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nhập danh mục bằng ô trên, mỗi mục sẽ xuất hiện ở đây."
+        android:textSize="11sp"
+        android:textColor="@color/gray_400"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Hủy"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/gray_500"
+            android:layout_marginRight="8dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        <Button
+            android:id="@+id/btnSavePlan"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Lưu kế hoạch"
+            android:textAllCaps="false"
+            android:backgroundTint="#4F46E5"
+            android:textColor="@color/white"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>

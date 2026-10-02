@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card_white"
+    android:clipToOutline="true">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BỘ LỌC NÂNG CAO"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tùy chỉnh hiển thị chi tiêu"
+                android:textSize="12sp"
+                android:textColor="#CCFFFFFF"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="@color/white"
+            android:contentDescription="Close"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Search Section -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔍" android:textSize="16sp" android:layout_marginRight="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tìm kiếm" android:textStyle="bold" android:textColor="@color/gray_800"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input"
+                android:hint="Tìm theo tiêu đề, mô tả..."
+                android:paddingHorizontal="16dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="24dp"
+                android:importantForAutofill="no"
+                android:inputType="text"/>
+
+            <!-- Amount Range Section -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💲" android:textSize="16sp" android:layout_marginRight="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Khoảng số tiền" android:textStyle="bold" android:textColor="@color/gray_800"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+                <EditText
+                    android:id="@+id/etAmountFrom"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input"
+                    android:hint="Từ"
+                    android:paddingHorizontal="16dp"
+                    android:textSize="14sp"
+                    android:layout_marginRight="8dp"
+                    android:inputType="number"
+                    android:importantForAutofill="no"/>
+                <EditText
+                    android:id="@+id/etAmountTo"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input"
+                    android:hint="Đến"
+                    android:paddingHorizontal="16dp"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="8dp"
+                    android:inputType="number"
+                    android:importantForAutofill="no"/>
+            </LinearLayout>
+
+            <!-- Category Section -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📝" android:textSize="16sp" android:layout_marginRight="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Danh mục" android:textStyle="bold" android:textColor="@color/gray_800"/>
+            </LinearLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:id="@+id/filterCatFood"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_margin="4dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🍔" android:layout_marginRight="10dp"/>
+                    <TextView android:id="@+id/tvCatFood" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ăn uống" android:textSize="13sp" android:textColor="@color/gray_800"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/filterCatCafe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_margin="4dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="☕" android:layout_marginRight="10dp"/>
+                    <TextView android:id="@+id/tvCatCafe" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cafe" android:textSize="13sp" android:textColor="@color/gray_800"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/filterCatGas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_margin="4dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⛽" android:layout_marginRight="10dp"/>
+                    <TextView android:id="@+id/tvCatGas" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Xăng xe" android:textSize="13sp" android:textColor="@color/gray_800"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/filterCatTravel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/bg_input"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_margin="4dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✈️" android:layout_marginRight="10dp"/>
+                    <TextView android:id="@+id/tvCatTravel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Du lịch" android:textSize="13sp" android:textColor="@color/gray_800"/>
+                </LinearLayout>
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nhấn vào danh mục để chọn, rồi nhấn Áp dụng để lọc."
+                android:textSize="11sp"
+                android:textColor="@color/gray_400"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Date Range Section -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📅" android:textSize="16sp" android:layout_marginRight="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Khoảng thời gian" android:textStyle="bold" android:textColor="@color/gray_800"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnSelectDateRange"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="16dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:focusable="true">
+                <TextView
+                    android:id="@+id/tvDateRangeLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Chọn khoảng thời gian"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_500"/>
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@android:drawable/arrow_down_float"
+                    app:tint="@color/gray_400"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/btnClearFilter"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Xóa bộ lọc"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/primary"
+            android:layout_marginRight="8dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        <Button
+            android:id="@+id/btnApplyFilter"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Áp dụng"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/white"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>
