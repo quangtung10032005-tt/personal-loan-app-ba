@@ -53,4 +53,4 @@ https://github.com/quangtung10032005-tt/personal-loan-app-ba/blob/main/diagrams/
 - Truy vấn & Kiểm thử: SQL, Postman.
 
 6. Tài liệu đính kèm (Documentation)
-[Tài liệu Báo cáo Đặc tả Hệ thống (PDF)](./docs/BaoCao_HeThong_VayVon_ChiTieu.pdf)
+[Tài liệu Báo cáo Đặc tả Hệ thống (PDF)](/docs/2_BaoCaoBTL_Android_UDVayVon&ChiTieu_v1.pdf)
