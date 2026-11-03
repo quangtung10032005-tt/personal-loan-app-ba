@@ -1,7 +1,11 @@
 TÀI LIỆU ĐẶC TẢ PHÂN TÍCH HỆ THỐNG (SYSTEM ANALYSIS SPECIFICATION)
+
 Tên dự án: Ứng dụng Vay vốn và Chi tiêu Cá nhân
+
 Đối tượng sử dụng: Sinh viên, người đi làm, cá nhân/hộ kinh doanh nhỏ lẻ
+
 Vai trò phân tích: Business Analyst (BA)
+
 PHẦN I. KHẢO SÁT & BÀI TOÁN NGHIỆP VỤ
 
 1.1. Bối cảnh & Khảo sát thực tế
@@ -49,11 +53,26 @@ PHẦN III. MÔ HÌNH HOÁ DỮ LIỆU & QUY TRÌNH (UML)
 
 3.1. Danh mục Use Cases chính
 
-UC01_DangNhap_DangKy: Quản lý truy cập.
-UC02_XacThucPIN: Bảo mật ứng dụng.
+UC01_DangNhap_DangKy: Quản lý truy cập (Đăng nhập/Đăng ký).
+
+UC02_XacThucPIN: Xác thực mã PIN bảo mật ứng dụng.
+
 UC03_QuanLyGiaoDich: Thêm/Sửa/Xóa khoản thu chi.
-UC04_ThietLapNganSach: Đặt định mức chi tiêu.
-UC05_TinhKhoanVay: Nhập thông số và tính gốc/lãi khoản vay.
-UC06_LapLichTraNo: Tự động tạo danh sách thanh toán từng kỳ.
-UC07_XemBaoCaoThongKe: Xem biểu đồ phân tích tài chính.
+
+UC04_QuanLyDanhMuc: Thêm mới, chỉnh sửa hoặc xóa danh mục phân loại thu/chi.
+
+UC05_ThietLapNganSach: Đặt định mức chi tiêu theo danh mục/tháng.
+
+UC06_QuanLyKhoanVayNo: Ghi nhận giao dịch vay/cho vay.
+
+UC07_TinhLaiSuat: Tính toán số lãi phát sinh (Lãi đơn/Lãi kép).
+
+UC08_GhiNhanThanhToanTraGop: Lưu lịch sử trả góp và cập nhật dư nợ còn lại.
+
+UC09_XemDashboard: Xem tổng quan số dư và Thu/Chi trong tháng.
+
+UC10_XemBieuDoPhanTich: Xem biểu đồ tròn/cột trực quan hóa tài chính.
+
+UC11_CaiDatNhacNho: Thiết lập lịch trình thông báo nhắc nhở định kỳ.
+
 (Chi tiết sơ đồ Use Case xem tại diagrams/use-case.png và ERD xem tại diagrams/erd.png)
