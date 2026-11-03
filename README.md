@@ -5,8 +5,8 @@ Vai trò đảm nhận: Business Analyst (BA) / System Analyst (Phân tích hệ
 
 1. Tổng quan dự án (Project Overview)
 Trong kỷ nguyên số, việc cân bằng giữa thu nhập, chi tiêu và các khoản vay nợ là một thách thức lớn đối với sinh viên và người trẻ đi làm. Ý tưởng về Ứng dụng Vay vốn và Chi tiêu cá nhân ra đời nhằm cung cấp một giải pháp "Local-first" (hoạt động Offline an toàn), tích hợp 2 nghiệp vụ cốt lõi trên cùng một nền tảng:
-1. Theo dõi và quản lý dòng tiền Thu/Chi hàng ngày.
-2. Quản lý Tín dụng cá nhân & Tính toán lịch trình trả nợ (gốc + lãi).
+ + Theo dõi và quản lý dòng tiền Thu/Chi hàng ngày.
+ + Quản lý Tín dụng cá nhân & Tính toán lịch trình trả nợ (gốc + lãi).
 
 2. Các luồng Nghiệp vụ cốt lõi (Core Business Modules)
 a. Quản trị Truy cập & Bảo mật
@@ -28,6 +28,7 @@ d. Thống kê & Báo cáo Trực quan
 - Trực quan hóa dữ liệu bằng Donut Chart (tỷ lệ phân bổ chi tiêu) và Bar Chart (so sánh biến động giữa các tháng).
 
 3. Phân tích & Thiết kế Hệ thống (System Analysis & Architecture)
+
 Sơ đồ Use Case tổng quát
 https://github.com/quangtung10032005-tt/personal-loan-app-ba/blob/main/Use%20Case%20t%E1%BB%95ng%20qu%C3%A1t.png
 Biểu đồ Thực thể Mối quan hệ (ERD) & Cấu trúc Dữ liệu
