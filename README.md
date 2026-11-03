@@ -31,6 +31,7 @@ d. Thống kê & Báo cáo Trực quan
 Sơ đồ Use Case tổng quát
 
 Biểu đồ Thực thể Mối quan hệ (ERD) & Cấu trúc Dữ liệu
+https://github.com/quangtung10032005-tt/personal-loan-app-ba/blob/main/ERD.png
 - Hệ thống sử dụng cơ sở dữ liệu cục bộ SQLite/Room với các bảng chính:
  + User: Lưu thông tin tài khoản và mã PIN bảo mật.
  + Category: Danh mục phân loại giao dịch.
