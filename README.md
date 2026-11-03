@@ -31,6 +31,7 @@ d. Thống kê & Báo cáo Trực quan
 
 Sơ đồ Use Case tổng quát
 https://github.com/quangtung10032005-tt/personal-loan-app-ba/blob/main/Use%20Case%20t%E1%BB%95ng%20qu%C3%A1t.png
+
 Biểu đồ Thực thể Mối quan hệ (ERD) & Cấu trúc Dữ liệu
 https://github.com/quangtung10032005-tt/personal-loan-app-ba/blob/main/ERD.png
 - Hệ thống sử dụng cơ sở dữ liệu cục bộ SQLite/Room với các bảng chính:
