@@ -43,8 +43,8 @@ https://github.com/quangtung10032005-tt/personal-loan-app-ba/blob/main/diagrams/
 
 4. Thiết kế Giao diện (UI/UX Wireframes)
 | Màn hình Vay vốn | Màn hình Kế hoạch Ngân sách | Màn hình Báo cáo Thống kê |
-| :---: | :---: | :---: |
-| *(Chèn link ảnh Vay vốn)* | *(Chèn link ảnh Ngân sách)* | *(Chèn link ảnh Báo cáo)* |
+
+| https://github.com/quangtung10032005-tt/personal-loan-app-ba/blob/main/mockups/screen_loan.png | https://github.com/quangtung10032005-tt/personal-loan-app-ba/blob/main/mockups/screen_budget.png | https://github.com/quangtung10032005-tt/personal-loan-app-ba/blob/main/mockups/screen_report.png |
 
 5. Công nghệ & Công cụ sử dụng
 - Phân tích & Mô hình hóa: BPMN, UML (Use Case, ERD Diagram), Draw.io / PlantUML.
