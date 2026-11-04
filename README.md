@@ -1,6 +1,9 @@
 Ứng dụng Vay vốn & Chi tiêu Cá nhân (Android Application)
+
 Dự án Bài tập lớn học phần: Phát triển ứng dụng trên thiết bị di động  
+
 Đơn vị: Trường Công nghệ thông tin và Truyền thông – Đại học Công nghiệp Hà Nội (HaUI)  
+
 Vai trò đảm nhận: Business Analyst (BA) / System Analyst (Phân tích hệ thống & Thiết kế dữ liệu)
 
 1. Tổng quan dự án (Project Overview)
