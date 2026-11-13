@@ -12,13 +12,16 @@ Trong kỷ nguyên số, việc cân bằng giữa thu nhập, chi tiêu và cá
  + Quản lý Tín dụng cá nhân & Tính toán lịch trình trả nợ (gốc + lãi).
 
 2. Các luồng Nghiệp vụ cốt lõi (Core Business Modules)
+
 a. Quản trị Truy cập & Bảo mật
 - Đăng ký, đăng nhập tài khoản người dùng.
 - Xác thực lớp bảo mật thứ cấp qua mã PIN cục bộ.
+
 b. Quản lý Thu / Chi & Ngân sách
 - Ghi nhận giao dịch Thu/Chi phân theo từng danh mục (Ăn uống, Cà phê, Xăng xe, Mua sắm...).
 - Thiết lập hạn mức Ngân sách (Budget) theo tháng/danh mục.
 - Cảnh báo thông minh: Hệ thống tự động kiểm tra và đưa ra cảnh báo (màu đỏ) khi chi tiêu thực tế vượt quá định mức ngân sách.
+
 c. Quản lý Tín dụng & Tính toán Khoản vay (Module chính đảm nhận)
 - Ghi nhận các khoản đi vay / cho vay cá nhân, hộ kinh doanh hoặc doanh nghiệp.
 - Thuật toán tính lãi: Hỗ trợ 2 phương thức tính lãi phổ biến:
@@ -26,6 +29,7 @@ c. Quản lý Tín dụng & Tính toán Khoản vay (Module chính đảm nhận
   + Lãi giảm dần theo dư nợ thực tế.
 - Tự động lập lịch trình trả nợ: Xuất danh sách chi tiết số tiền gốc, tiền lãi và tổng số tiền phải trả cho từng kỳ.
 - Tự động liên kết Ngân sách: Tự động khởi tạo một mục Ngân sách dự phòng trả nợ trong module Chi tiêu khi tạo mới khoản vay.
+
 d. Thống kê & Báo cáo Trực quan
 - Dashboard tổng quan: Hiển thị tổng số dư, tổng thu/chi trong tháng.
 - Trực quan hóa dữ liệu bằng Donut Chart (tỷ lệ phân bổ chi tiêu) và Bar Chart (so sánh biến động giữa các tháng).
